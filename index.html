@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo Gramática Divertida</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1>Aprendiendo Gramática Divertida</h1>
+    </header>
+
+    <nav class="navigation">
+        <button onclick="showActivity('classification')">Clasificar Palabras</button>
+        <button onclick="showActivity('story')">Completar Historias</button>
+        <button onclick="showActivity('exercises')">Ejercicios</button>
+    </nav>
+
+    <main class="main-content">
+        <!-- Sección de clasificación de palabras -->
+        <section id="classification" class="activity">
+            <h2>Clasifica las palabras</h2>
+            <div class="words-container" id="words-container"></div>
+            <div class="categories">
+                <div class="category" id="sustantivos" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <h3>Sustantivos</h3>
+                    <p>Nombran personas, animales, cosas o ideas</p>
+                </div>
+                <div class="category" id="adjetivos" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <h3>Adjetivos</h3>
+                    <p>Describen características</p>
+                </div>
+                <div class="category" id="verbos" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <h3>Verbos</h3>
+                    <p>Expresan acciones</p>
+                </div>
+            </div>
+            <button onclick="checkClassification()" class="boton1">Comprobar</button>
+            <div id="classification-feedback"></div>
+        </section>
+
+        <!-- Sección de historias interactivas -->
+        <section id="story" class="activity" style="display:none;">
+            <h2>Completa la historia</h2>
+            <div class="progress" id="story-counter"></div>
+            <div class="story" id="story-content"></div>
+            <div id="story-options"></div>
+            <div id="story-feedback"></div>
+            <button onclick="nextStory()" class="boton2">Siguiente historia</button>
+        </section>
+
+        <!-- Sección de ejercicios -->
+        <section id="exercises" class="activity" style="display:none;">
+            <h2>Ejercicios de práctica</h2>
+            <div class="progress" id="exercise-counter"></div>
+            <div id="exercise-content"></div>
+            <div class="navigation-buttons">
+                <button onclick="prevExercise()">Anterior</button>
+                <button onclick="nextExercise()">Siguiente</button>
+            </div>
+            <div id="exercise-feedback"></div>
+        </section>
+    </main> <br><br>
+
+    <footer class="footer">
+        <p> Proyecto de Aula - Lenguajes de Programación</p>
+    </footer>
+
+    <script src="games.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

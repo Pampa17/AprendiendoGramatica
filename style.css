@@ -1,0 +1,215 @@
+/* Estilos generales */
+body {
+    font-family: 'Comic Neue', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+.boton1{
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.boton2{
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.header {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navigation button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Comic Neue', cursive;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.navigation button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.main-content {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.activity {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Estilos para el juego de clasificación */
+.words-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.word {
+    background-color: #ffeb3b;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: move;
+    user-select: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.categories {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.category {
+    width: 30%;
+    padding: 15px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    text-align: center;
+    min-height: 150px;
+}
+
+.category h3 {
+    margin-top: 0;
+    color: #2196F3;
+}
+
+/* Estilos para historias interactivas */
+.story {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.blank {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    border-bottom: 2px solid #333;
+    margin: 0 5px;
+    vertical-align: middle;
+    position: relative;
+}
+
+.option {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Estilos para feedback */
+.feedback {
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.correct {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.incorrect {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+/* Estilos para el progreso */
+.progress {
+    background-color: #e3f2fd;
+    padding: 5px 10px;
+    border-radius: 15px;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Estilos para los botones de navegación */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.navigation-buttons button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navigation-buttons button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para el campo de texto en completar */
+input[type="text"] {
+    padding: 8px;
+    width: 200px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.hint {
+    font-style: italic;
+    color: #666;
+    margin-top: 5px;
+}
+
