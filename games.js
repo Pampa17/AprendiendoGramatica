@@ -20,31 +20,7 @@ const storiesData = [
             { id: 2, correct: 'caluroso', options: ['caluroso', 'libro', 'saltar'] },
             { id: 3, correct: 'corren', options: ['corren', 'grande', 'maestro'] }
         ]
-    },
-    {
-        id: 2,
-        title: "La Aventura en la Escuela",
-        content: "La [1] explica la lección con su voz [2]. Los estudiantes [3] atentamente y toman notas en sus [4].",
-        blanks: [
-            { id: 1, correct: 'maestra', options: ['maestra', 'rápido', 'leer'], hint: "Persona que enseña" },
-            { id: 2, correct: 'clara', options: ['clara', 'ciudad', 'escribir'], hint: "Que se entiende bien" },
-            { id: 3, correct: 'escuchan', options: ['escuchan', 'pequeño', 'libro'], hint: "Prestar atención a los sonidos" },
-            { id: 4, correct: 'cuadernos', options: ['cuadernos', 'feliz', 'saltar'], hint: "Donde escribimos en clase" }
-        ]
-    },
-    {
-        id: 3,
-        title: "El Cumpleaños Sorpresa",
-        content: "Hoy es mi [1] y mis amigos me prepararon una [2] sorpresa. El pastel es [3] y [4]. Todos [5] y [6] juntos.",
-        blanks: [
-            { id: 1, correct: 'cumpleaños', options: ['cumpleaños', 'alegre', 'celebran'], hint: "Aniversario del nacimiento" },
-            { id: 2, correct: 'fiesta', options: ['fiesta', 'grande', 'feliz'], hint: "Reunión para celebrar" },
-            { id: 3, correct: 'delicioso', options: ['delicioso', 'regalo', 'soplar'], hint: "Que sabe muy bien" },
-            { id: 4, correct: 'colorido', options: ['colorido', 'velas', 'reír'], hint: "Con muchos colores" },
-            { id: 5, correct: 'ríen', options: ['ríen', 'amigos', 'globos'], hint: "Expresar alegría" },
-            { id: 6, correct: 'juegan', options: ['juegan', 'festejo', 'dulce'], hint: "Realizar actividades divertidas" }
-        ]
-    },
+    }
 ];
 
 const exercisesData = [
@@ -53,20 +29,6 @@ const exercisesData = [
         options: ["correr", "feliz", "libro", "rápido"],
         correct: 2,
         explanation: "Los sustantivos son palabras que nombran personas, animales, cosas o ideas. 'Libro' es un sustantivo."
-    },
-    {
-        type: "true-false",
-        question: "'Saltar' es un adjetivo.",
-        options: ["Verdadero", "Falso"],
-        correct: 1,
-        explanation: "'Saltar' es un verbo porque expresa una acción."
-    },
-    {
-        type: "fill-blank",
-        question: "Completa la frase: El ___ amarillo vuela alto.",
-        correct: "pájaro",
-        hint: "Un animal con alas",
-        explanation: "Necesitamos un sustantivo que nombre un animal que puede volar."
     }
 ];
 
