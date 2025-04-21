@@ -4,25 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprendiendo Gramática Divertida</title>
+
+    <!-- Hoja de estilos externa para dar formato visual a la página -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Fuente externa para un estilo de letra más amigable y divertido -->
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Encabezado principal de la página -->
     <header class="header">
         <h1>Aprendiendo Gramática Divertida</h1>
     </header>
 
+    <!-- Menú de navegación para cambiar entre actividades -->
     <nav class="navigation">
+        <!-- Cada botón llama a la función 'showActivity' indicando qué sección mostrar -->
         <button onclick="showActivity('classification')">Clasificar Palabras</button>
         <button onclick="showActivity('story')">Completar Historias</button>
         <button onclick="showActivity('exercises')">Ejercicios</button>
     </nav>
 
+    <!-- Contenedor principal de actividades -->
     <main class="main-content">
-        <!-- Sección de clasificación de palabras -->
+        <!-- Sección 1: Clasificación de palabras (actividad tipo arrastrar y soltar) -->
         <section id="classification" class="activity">
             <h2>Clasifica las palabras</h2>
+
+            <!-- Contenedor donde aparecerán las palabras para arrastrar -->
             <div class="words-container" id="words-container"></div>
+
+            <!-- Categorías donde el usuario debe soltar las palabras -->
             <div class="categories">
                 <div class="category" id="sustantivos" ondrop="drop(event)" ondragover="allowDrop(event)">
                     <h3>Sustantivos</h3>
@@ -37,31 +49,49 @@
                     <p>Expresan acciones</p>
                 </div>
             </div>
+
+            <!-- Botón para comprobar si la clasificación realizada es correcta -->
             <button onclick="checkClassification()" class="boton1">Comprobar</button>
+
+            <!-- Área donde se mostrará el resultado de la comprobación -->
             <div id="classification-feedback"></div>
         </section>
 
-        <!-- Sección de historias interactivas -->
+        <!-- Sección 2: Historias interactivas para completar (actividad tipo rellenar espacios) -->
         <section id="story" class="activity" style="display:none;">
             <h2>Completa la historia</h2>
+
+            <!-- Contenedor de la historia con espacios en blanco -->
             <div class="story" id="story-content"></div>
+
+            <!-- Contenedor de las opciones de palabras que completan la historia -->
             <div id="story-options"></div>
+
+            <!-- Área donde se muestra si el usuario completó bien la historia -->
             <div id="story-feedback"></div>
         </section>
 
-        <!-- Sección de ejercicios -->
+        <!-- Sección 3: Ejercicios de práctica (probablemente respuestas de opción múltiple o similares) -->
         <section id="exercises" class="activity" style="display:none;">
             <h2>Ejercicios de práctica</h2>
+
+            <!-- Contenedor donde aparecerán los ejercicios -->
             <div id="exercise-content"></div>
+
+            <!-- Área para mostrar retroalimentación sobre las respuestas -->
             <div id="exercise-feedback"></div>
         </section>
-    </main> <br><br>
+    </main> 
 
+    <br><br>
+
+    <!-- Pie de página con información del proyecto -->
     <footer class="footer">
-        <p> 2025 Proyecto de Aula - Lengua Castellana 3° Primaria</p>
+        <p>2025 Proyecto de Aula - Lengua Castellana 3° Primaria</p>
     </footer>
 
-    <script src="games.js"></script>
-    <script src="script.js"></script>
+    <!-- Archivos JavaScript que contienen la lógica del juego y las actividades -->
+    <script src="games.js"></script> <!-- Lógica de actividades tipo juego: arrastrar/soltar, etc. -->
+    <script src="script.js"></script> <!-- Lógica general del sitio: mostrar secciones, cargar datos, etc. -->
 </body>
 </html>
