@@ -37,15 +37,6 @@ Aplicación web interactiva diseñada para ayudar a niños de 3° de primaria a 
    - Responde preguntas de selección múltiple
    - Completa frases con la palabra correcta
    - Recibe explicaciones gramaticales
-   - 
-## Estructura del Proyecto
-proyecto LP/
-├── index.html # Página principal
-├── styles.css # Estilos principales
-├── script.js # Lógica de la aplicación
-├── games.js # Datos de juegos y ejercicios
-└── assets/ # Recursos multimedia
-  └── sounds/ # Efectos de sonido
 
 ## Contacto
 
