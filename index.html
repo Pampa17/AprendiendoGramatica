@@ -1,41 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Configuración básica de codificación y responsive -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título del documento que aparece en la pestaña del navegador -->
     <title>Aprendiendo Gramática Divertida</title>
-
-    <!-- Hoja de estilos externa para dar formato visual a la página -->
+    
+    <!-- Vinculación con hoja de estilos externa -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Fuente externa para un estilo de letra más amigable y divertido -->
+    
+    <!-- Fuente personalizada para dar un aspecto amigable y divertido -->
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Encabezado principal de la página -->
-    <header class="header">
-        <h1>Aprendiendo Gramática Divertida</h1>
-    </header>
 
-    <!-- Menú de navegación para cambiar entre actividades -->
-    <nav class="navigation">
-        <!-- Cada botón llama a la función 'showActivity' indicando qué sección mostrar -->
+    <!-- Sección de bienvenida, visible al inicio -->
+    <section id="welcome" class="activity">
+        <div class="welcome-container">
+            <h1>¡Aprende Gramática Divertida!</h1>
+            
+            <!-- Mascota animada para acompañar al usuario -->
+            <div class="welcome-character">
+                <div class="speech-bubble">¡Hola! Soy Grami, vamos a aprender juntos</div>
+                <img src="mascota2.png" alt="Mascota divertida" class="character-img">
+            </div>
+            
+            <!-- Características del juego mostradas con íconos y textos -->
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h2>Clasifica Palabras</h2>
+                    <p>Aprende a diferenciar sustantivos, adjetivos y verbos</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h2>Completa Historias</h2>
+                    <p>Arrastra palabras para terminar cuentos divertidos</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h2>Gana Premios</h2>
+                    <p>Consigue estrellas por cada ejercicio completado</p>
+                </div>
+            </div>
+            
+            <!-- Botón principal para iniciar las actividades -->
+            <button onclick="startLearning()" class="start-button">¡Comenzar Aprendizaje!</button>
+        </div>
+    </section>
+    
+    <!-- Barra de navegación entre actividades. Oculta al inicio -->
+    <nav id="main-nav" class="navigation" style="display: none;">
+        <!-- Cada botón activa una sección diferente de aprendizaje -->
         <button onclick="showActivity('classification')">Clasificar Palabras</button>
         <button onclick="showActivity('story')">Completar Historias</button>
         <button onclick="showActivity('exercises')">Ejercicios</button>
+        <button id="resetAppBtn" class="resetbtn">Reiniciar App</button>
     </nav>
 
-    <!-- Contenedor principal de actividades -->
-    <main class="main-content">
-        <!-- Sección 1: Clasificación de palabras (actividad tipo arrastrar y soltar) -->
+    <!-- Contenedor principal que aloja las actividades. Oculto inicialmente -->
+    <main id="main-wrapper" class="main-content" style="display: none;">
+        
+        <!-- Sección 1: Juego de Clasificación de Palabras -->
         <section id="classification" class="activity">
             <h2>Clasifica las palabras</h2>
-
-            <!-- Contenedor donde aparecerán las palabras para arrastrar -->
+            <!-- Contenedor donde se cargan las palabras arrastrables -->
             <div class="words-container" id="words-container"></div>
-
-            <!-- Categorías donde el usuario debe soltar las palabras -->
+            
+            <!-- Categorías de destino donde se sueltan las palabras -->
             <div class="categories">
+                <!-- Cada contenedor representa una clase gramatical -->
                 <div class="category" id="sustantivos" ondrop="drop(event)" ondragover="allowDrop(event)">
                     <h3>Sustantivos</h3>
                     <p>Nombran personas, animales, cosas o ideas</p>
@@ -50,48 +88,64 @@
                 </div>
             </div>
 
-            <!-- Botón para comprobar si la clasificación realizada es correcta -->
+            <!-- Botón para comprobar si la clasificación fue correcta -->
             <button onclick="checkClassification()" class="boton1">Comprobar</button>
-
-            <!-- Área donde se mostrará el resultado de la comprobación -->
             <div id="classification-feedback"></div>
         </section>
 
-        <!-- Sección 2: Historias interactivas para completar (actividad tipo rellenar espacios) -->
+        <!-- Sección 2: Juego de completar historias -->
         <section id="story" class="activity" style="display:none;">
             <h2>Completa la historia</h2>
-
-            <!-- Contenedor de la historia con espacios en blanco -->
+            
+            <!-- Contador o progreso del número de historias -->
+            <div class="progress" id="story-counter"></div>
+            
+            <!-- Contenido de la historia con espacios en blanco -->
             <div class="story" id="story-content"></div>
-
-            <!-- Contenedor de las opciones de palabras que completan la historia -->
+            
+            <!-- Instrucción y opciones de palabras para completar -->
+            <h3>Arrastra las palabras a los espacios en blanco:</h3>
             <div id="story-options"></div>
-
-            <!-- Área donde se muestra si el usuario completó bien la historia -->
+            
+            <!-- Botón para verificar las respuestas -->
+            <button class="boton1" onclick="checkStoryCompletion()">Comprobar</button>
+            
+            <!-- Navegación entre historias -->
+            <div class="navigation-buttons">
+                <button class="navigation-historias" onclick="prevStory()">Anterior historia</button>
+                <button class="navigation-historias" onclick="nextStory()">Siguiente historia</button>
+            </div>
+            
             <div id="story-feedback"></div>
         </section>
 
-        <!-- Sección 3: Ejercicios de práctica (probablemente respuestas de opción múltiple o similares) -->
+        <!-- Sección 3: Ejercicios adicionales de práctica -->
         <section id="exercises" class="activity" style="display:none;">
             <h2>Ejercicios de práctica</h2>
-
-            <!-- Contenedor donde aparecerán los ejercicios -->
+            
+            <!-- Muestra el número de ejercicio actual -->
+            <div id="exercise-counter"></div>
+            
+            <!-- Área donde se genera el contenido dinámico del ejercicio -->
             <div id="exercise-content"></div>
+            
+            <!-- Botones para avanzar o retroceder entre ejercicios -->
+            <div class="navigation-buttons">
+                <button onclick="prevExercise()">Anterior</button>
+                <button onclick="nextExercise()">Siguiente</button>
+            </div>
 
-            <!-- Área para mostrar retroalimentación sobre las respuestas -->
             <div id="exercise-feedback"></div>
         </section>
-    </main> 
+    </main> <br><br>
 
-    <br><br>
-
-    <!-- Pie de página con información del proyecto -->
+    <!-- Pie de página con créditos académicos -->
     <footer class="footer">
-        <p>2025 Proyecto de Aula - Lengua Castellana 3° Primaria</p>
+        <p> 2025 Proyecto de Aula - Lengua Castellana 3° Primaria</p>
     </footer>
 
-    <!-- Archivos JavaScript que contienen la lógica del juego y las actividades -->
-    <script src="games.js"></script> <!-- Lógica de actividades tipo juego: arrastrar/soltar, etc. -->
-    <script src="script.js"></script> <!-- Lógica general del sitio: mostrar secciones, cargar datos, etc. -->
+    <!-- Archivos JavaScript: juegos y control de navegación -->
+    <script src="games.js"></script> <!-- Datos para los juegos -->
+    <script src="script.js"></script> <!-- Lógica, funciones generales y navegación -->
 </body>
 </html>
