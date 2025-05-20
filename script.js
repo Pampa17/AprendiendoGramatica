@@ -1,6 +1,5 @@
 /**
  * Función showActivity
- * --------------------
  * Muestra la sección solicitada (clasificación, historia o ejercicios)
  * y oculta las demás. Esta función también se encarga de cargar los datos
  * correspondientes a la actividad seleccionada.
@@ -29,7 +28,6 @@ function showActivity(activityId) {
 
 /**
  * Función startLearning
- * ---------------------
  * Se ejecuta al hacer clic en el botón "¡Comenzar Aprendizaje!"
  * Oculta la pantalla de bienvenida, guarda que ya se vio esta pantalla
  * y muestra el menú principal y los juegos, comenzando por la actividad de clasificación.
@@ -53,7 +51,6 @@ function startLearning() {
 
 /**
  * Evento para manejar el botón "Reiniciar App"
- * --------------------------------------------
  * Elimina del localStorage la bandera de que ya se vio la introducción
  * y recarga la página para volver a mostrar la pantalla de bienvenida.
  */
@@ -70,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /*
  * Evento que se ejecuta al cargar el DOM
- * --------------------------------------
  * Verifica si el usuario ya ha visto la introducción mediante localStorage.
  * En función de esto, muestra la pantalla de bienvenida o los juegos directamente.
  */
